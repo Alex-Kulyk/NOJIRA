@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+body {
+  background-color: violet;
+  padding: 1rem;
+}
+h1 {
+  color: thistle;
+}
+#pto {
+  line-height: normal;
+}
