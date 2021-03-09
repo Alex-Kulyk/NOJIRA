@@ -11,12 +11,7 @@ const isProd = !isDev;
 
 const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`);
 const optimization = () => {
-  const config = {
-    // minimize: true,
-    // splitChunks: {
-    //   chunks: 'all',
-    // },
-  };
+  const config = {};
   if (isProd) {
     config.minimizer = [
       new OptimizeCssAssetsPlugin(),
@@ -41,14 +36,11 @@ const babelOptions = (preset) => {
 };
 
 const HWPConfig = [];
-fs.readdirSync(path.resolve(__dirname, './src/TWIG/Pages')).forEach((file) => {
+fs.readdirSync(path.resolve(__dirname, 'src/TWIG/Pages')).forEach((file) => {
   const page = new HtmlWebpackPlugin({
     filename: file.replace('.twig', '.html'),
-    template: path.resolve(__dirname, `./src/TWIG/Pages/${file}`),
+    template: path.resolve(__dirname, `src/TWIG/Pages/${file}`),
     hash: true,
-    // minify: {
-    //   collapseWhitespace: isProd,
-    // },
   });
   HWPConfig.push(page);
 });
@@ -67,12 +59,6 @@ module.exports = {
   },
   devtool: isDev ? 'source-map' : false,
   plugins: [
-    // new HtmlWebpackPlugin({
-    //   template: './index.html',
-    //   minify: {
-    //     collapseWhitespace: isProd,
-    //   },
-    // }),
     ...HWPConfig,
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({ filename: filename('css') }),

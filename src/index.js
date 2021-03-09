@@ -1,6 +1,5 @@
 import add from './one';
-import './styles.css/styles.css';
-import './styles.css/border.scss';
+import './SCSS/styles.scss';
 const ll = 8;
 
 const add1 = async () => {
