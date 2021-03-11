@@ -36,10 +36,10 @@ const babelOptions = (preset) => {
 };
 
 const HWPConfig = [];
-fs.readdirSync(path.resolve(__dirname, 'src/TWIG/Pages')).forEach((file) => {
+fs.readdirSync(path.resolve(__dirname, './src/TWIG/Pages')).forEach((file) => {
   const page = new HtmlWebpackPlugin({
     filename: file.replace('.twig', '.html'),
-    template: path.resolve(__dirname, `src/TWIG/Pages/${file}`),
+    template: path.resolve(__dirname, `./src/TWIG/Pages/${file}`),
     hash: true,
   });
   HWPConfig.push(page);
