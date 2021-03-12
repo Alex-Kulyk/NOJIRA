@@ -1,6 +1,6 @@
 {% extends '../Layouts/layout.twig' %}
 {% block title %}
-   Blog page
+    Blog page
 {% endblock %}
 
 {% set blogs = [
@@ -47,8 +47,8 @@
 ] %}
 
 {% block content %}
-   {% for blog in blogs %}
-      {% include '../Blocks/card.twig' with {
+    {% for blog in blogs %}
+        {% include '../Blocks/card.twig' with {
          title: blog.title,
          path: blog.image_path,
          description: blog.description,
@@ -56,5 +56,5 @@
          author: blog.author,
          type: blog.type
       } %}
-   {% endfor %}
+    {% endfor %}
 {% endblock %}
