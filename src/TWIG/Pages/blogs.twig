@@ -48,14 +48,5 @@
 ] %}
 
 {% block content %}
-  {% for blog in blogs %}
-    {% include '../Blocks/card.twig' with {
-      title: blog.title,
-      path: blog.image_path,
-      description: blog.description,
-      link: blog.link,
-      author: blog.author,
-      type: blog.type
-    } %}
-  {% endfor %}
+  {% include '../Blocks/blogs.twig' %}
 {% endblock %}
