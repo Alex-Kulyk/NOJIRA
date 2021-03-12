@@ -1,63 +1,62 @@
 {% extends '../Layouts/layout.twig' %}
 {% block meta %}
-    {{ parent() }}
+  {{ parent() }}
 {% endblock %}
 {% block title %}
-    Article page
+  Article page
 {% endblock %}
 
 {% set articles = [
-   {
-      title: 'The Dark is Rising',
-      image_path: '../src/Assets/the_dark.jpg',
-      description: 'A perennial favorite of both elementary',
-      link: 'https://www.ex1.com',
-      author: 'Susan Cooper',
-      type: 'book'
-   },
-   {
-      title: 'The Princess Bride',
-      image_path: '../src/Assets/The_Princess_Bride.jpg',
-      description: 'Lorem ipsum dolor sit amet.',
-      link: 'https://www.ex2.com',
-      author: 'William Goldman',
-      type: 'school'
-   },
-   {
-      title: 'A Midsummer Tempest',
-      image_path: '../src/Assets/Midsumtemp.jpg',
-      description: 'Lorem ipsum dolor sit amet consectetur.',
-      link: 'https://www.ex3.com',
-      author: 'Poul Anderson',
-      type: 'Lecture'
-   },
-   {
-      title: 'The Sword of Shannara',
-      image_path: '../src/Assets/the_sword_of_shana.jpg',
-      description: 'Lorem, ipsum dolor sit amet consectetur',
-      link: 'https://www.ex4.com',
-      author: 'Terry Brooks',
-      type: 'Study'
-   },
-   {
-      title: 'Kindred',
-      image_path: '../src/Assets/kindred.jpg',
-      description: 'A perennial favorite of both elementary',
-      link: 'https://www.ex5.com',
-      author: 'Octavia Butler',
-      type: 'University'
-   }
+  {
+    title: 'The Dark is Rising',
+    image_path: '../src/Assets/the_dark.jpg',
+    description: 'A perennial favorite of both elementary',
+    link: 'https://www.ex1.com',
+    author: 'Susan Cooper',
+    type: 'book'
+  },
+  {
+    title: 'The Princess Bride',
+    image_path: '../src/Assets/The_Princess_Bride.jpg',
+    description: 'Lorem ipsum dolor sit amet.',
+    link: 'https://www.ex2.com',
+    author: 'William Goldman',
+    type: 'school'
+  },
+  {
+    title: 'A Midsummer Tempest',
+    image_path: '../src/Assets/Midsumtemp.jpg',
+    description: 'Lorem ipsum dolor sit amet consectetur.',
+    link: 'https://www.ex3.com',
+    author: 'Poul Anderson',
+    type: 'Lecture'
+  },
+  {
+    title: 'The Sword of Shannara',
+    image_path: '../src/Assets/the_sword_of_shana.jpg',
+    description: 'Lorem, ipsum dolor sit amet consectetur',
+    link: 'https://www.ex4.com',
+    author: 'Terry Brooks',
+    type: 'Study'
+  },
+  {
+    title: 'Kindred',
+    image_path: '../src/Assets/kindred.jpg',
+    description: 'A perennial favorite of both elementary',
+    link: 'https://www.ex5.com',
+    author: 'Octavia Butler',
+    type: 'University'
+  }
 ] %}
-
 {% block content %}
-    {% for article in articles %}
-        {% include '../Blocks/card.twig' with {
-         title: article.title,
-         path: article.image_path,
-         description: article.description,
-         link: article.link,
-         author: article.author,
-         type: article.type
-      } %}
-    {% endfor %}
+  {% for article in articles %}
+    {% include '../Blocks/card.twig' with {
+      title: article.title,
+      path: article.image_path,
+      description: article.description,
+      link: article.link,
+      author: article.author,
+      type: article.type
+    } %}
+  {% endfor %}
 {% endblock %}

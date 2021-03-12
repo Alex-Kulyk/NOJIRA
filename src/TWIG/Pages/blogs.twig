@@ -1,60 +1,61 @@
 {% extends '../Layouts/layout.twig' %}
+
 {% block title %}
-    Blog page
+  Blog page
 {% endblock %}
 
 {% set blogs = [
-   {
-      title: 'Funny SUMMER Quotes',
-      image_path: '../src/Assets/pexels1.jpg',
-      description: 'A perennial favorite of both elementary',
-      link: 'https://www.ex1.com',
-      author: 'SABRINA FARMER',
-      type: 'book'
-   },
-   {
-      title: 'Top 10 Tips With CAR',
-      image_path: '../src/Assets/pexels2.jpg',
-      description: 'Lorem ipsum dolor sit amet.',
-      link: 'https://www.ex2.com',
-      author: 'PAUL ANDREWS',
-      type: 'school'
-   },
-   {
-      title: 'Avoid HUMAN Burnout',
-      image_path: '../src/Assets/pexels3.jpg',
-      description: 'Lorem ipsum dolor sit amet consectetur.',
-      link: 'https://www.ex3.com',
-      author: 'CYRIL NUNEZ',
-      type: 'Lecture'
-   },
-   {
-      title: 'TREE Expert Interview',
-      image_path: '../src/Assets/pexels4.jpg',
-      description: 'Lorem, ipsum dolor sit amet consectetur',
-      link: 'https://www.ex4.com',
-      author: 'ADDISON PRESLEY',
-      type: 'Study'
-   },
-   {
-      title: 'Fall In Love With HUMAN',
-      image_path: '../src/Assets/pexels5.jpg',
-      description: 'A perennial favorite of both elementary',
-      link: 'https://www.ex5.com',
-      author: 'SACHA SMART',
-      type: 'University'
-   }
+  {
+    title: 'Funny SUMMER Quotes',
+    image_path: '../src/Assets/pexels1.jpg',
+    description: 'A perennial favorite of both elementary',
+    link: 'https://www.ex1.com',
+    author: 'SABRINA FARMER',
+    type: 'book'
+  },
+  {
+    title: 'Top 10 Tips With CAR',
+    image_path: '../src/Assets/pexels2.jpg',
+    description: 'Lorem ipsum dolor sit amet.',
+    link: 'https://www.ex2.com',
+    author: 'PAUL ANDREWS',
+    type: 'school'
+  },
+  {
+    title: 'Avoid HUMAN Burnout',
+    image_path: '../src/Assets/pexels3.jpg',
+    description: 'Lorem ipsum dolor sit amet consectetur.',
+    link: 'https://www.ex3.com',
+    author: 'CYRIL NUNEZ',
+    type: 'Lecture'
+  },
+  {
+    title: 'TREE Expert Interview',
+    image_path: '../src/Assets/pexels4.jpg',
+    description: 'Lorem, ipsum dolor sit amet consectetur',
+    link: 'https://www.ex4.com',
+    author: 'ADDISON PRESLEY',
+    type: 'Study'
+  },
+  {
+    title: 'Fall In Love With HUMAN',
+    image_path: '../src/Assets/pexels5.jpg',
+    description: 'A perennial favorite of both elementary',
+    link: 'https://www.ex5.com',
+    author: 'SACHA SMART',
+    type: 'University'
+  }
 ] %}
 
 {% block content %}
-    {% for blog in blogs %}
-        {% include '../Blocks/card.twig' with {
-         title: blog.title,
-         path: blog.image_path,
-         description: blog.description,
-         link: blog.link,
-         author: blog.author,
-         type: blog.type
-      } %}
-    {% endfor %}
+  {% for blog in blogs %}
+    {% include '../Blocks/card.twig' with {
+      title: blog.title,
+      path: blog.image_path,
+      description: blog.description,
+      link: blog.link,
+      author: blog.author,
+      type: blog.type
+    } %}
+  {% endfor %}
 {% endblock %}
