@@ -1,0 +1,12 @@
+/node_modules
+/dist
+#misc
+.DS_Store
+.idea
+.vscode
+.css
+.html
+.ENV
+.env
+
+
