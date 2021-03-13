@@ -3,26 +3,33 @@
   index page
 {% endblock %}
 
-{% block content %}
-  {% for article in articles|slice(0, 1) %}
-    {% include '../Blocks/card.twig' with {
-      title: article.title,
-      path: article.image_path,
-      description: article.description,
-      link: article.link,
-      author: article.author,
-      type: article.type
-    } only %}
-  {% endfor %}
+{% set firstArticle = [
+  {
+    title: 'The Dark is Rising',
+    image_path: '../src/Assets/book12.jpg',
+    description: 'A perennial favorite of both elementary',
+    link: 'https://www.ex1.com',
+    author: 'Susan Cooper',
+    type: 'book'
+  }
+] %}
 
-  {% for blog in blogs|slice(2, 1) %}
-    {% include '../Blocks/card.twig' with {
-      title: blog.title,
-      path: blog.image_path,
-      description: blog.description,
-      link: blog.link,
-      author: blog.author,
-      type: blog.type
-    } only %}
-  {% endfor %}
+{% set thirdBlog = [
+  {
+    title: 'Avoid HUMAN Burnout',
+    image_path: '../src/Assets/pexels3.jpg',
+    description: 'Lorem ipsum dolor sit amet consectetur.',
+    link: 'https://www.ex3.com',
+    author: 'CYRIL NUNEZ',
+    type: 'Lecture'
+  }
+] %}
+
+{% block content %}
+  {% include '../blocks/articles.twig' with {
+    articles: firstArticle
+  } only %}
+  {% include '../blocks/blogs.twig' with {
+    blogs: thirdBlog
+  } only %}
 {% endblock %}

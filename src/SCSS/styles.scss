@@ -13,13 +13,11 @@ body {
 }
 
 .content {
-  align-items: center;
-  background-color: rgb(170, 144, 149);
+  background-color: rgba(170, 144, 149, 0.527);
   display: flex;
   flex-wrap: wrap;
-  max-width: 1200px;
-  height: 100vh;
   justify-content: center;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -44,7 +42,7 @@ body {
 }
 
 .image {
-  height: 80%;
+  height: 70%;
   object-fit: cover;
   width: 100%;
 }
