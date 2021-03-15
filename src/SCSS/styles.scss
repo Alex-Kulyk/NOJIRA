@@ -1,39 +1,45 @@
+@function rem($size) {
+  @return $size / 16px * 1rem;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  font-size: 62.5%;
-}
-
 body {
-  background-color: rgb(248, 244, 240);
+  background-color: #d6eaf8;
 }
 
 .content {
-  align-items: center;
-  background-color: rgb(170, 144, 149);
+  background-color: #ebdef0;
   display: flex;
   flex-wrap: wrap;
-  max-width: 1200px;
-  height: 100vh;
-  justify-content: center;
+  max-width: rem(1200px);
   margin: 0 auto;
 }
 
 .card__content {
-  background-color: rgb(200, 218, 218);
+  background-color: #f8f9f9;
   box-shadow: 10px 10px 10px -10px rgba(34, 60, 80, 0.85);
-  border-radius: 0.5rem;
-  flex: 1 1 10rem;
-  margin: 2rem;
-  width: 22rem;
+  border-radius: rem(5px);
+  flex: 1 1 rem(100px);
+  margin: rem(10px);
+
+  a {
+    text-decoration: none;
+    color: #17202a;
+  }
 
   h4 {
-    padding-bottom: 0.5rem;
+    font-size: rem(11px);
+    padding-bottom: rem(5px);
     text-align: center;
+  }
+
+  p {
+    font-size: rem(8px);
   }
 }
 
@@ -41,10 +47,11 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-size: rem(9px);
 }
 
 .image {
-  height: 80%;
+  height: 70%;
   object-fit: cover;
   width: 100%;
 }

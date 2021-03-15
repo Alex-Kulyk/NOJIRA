@@ -1,0 +1,10 @@
+{% for article in articles %}
+  {% include './card.twig' with {
+    title: article.title,
+    path: article.image_path,
+    description: article.description,
+    link: article.link,
+    author: article.author,
+    type: article.type
+  } only %}
+{% endfor %}
